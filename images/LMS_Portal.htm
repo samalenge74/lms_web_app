@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>LMS_Portal</title>
+        <meta name="description" content="">
+        <meta name="author" content="samalej">
+
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="http://localhost:8080/favicon.ico">
+        <link rel="apple-touch-icon" href="http://localhost:8080/apple-touch-icon.png">
+        
+        <link href="LMS_Portal_files/tabs.css" rel="stylesheet" type="text/css" media="all">
+        <link type="text/css" href="LMS_Portal_files/tableStyles.css" rel="stylesheet">
+        <link href="LMS_Portal_files/fullcalendar_002.css" rel="stylesheet">
+        <link href="LMS_Portal_files/fullcalendar.css" rel="stylesheet" media="print">
+        <link href="LMS_Portal_files/jquery-ui-1.css" rel="stylesheet" type="text/css">
+        
+        <script type="text/javascript" src="LMS_Portal_files/moment.js"></script>
+        <script type="text/javascript" src="LMS_Portal_files/jquery-2.js"></script>
+        <script src="LMS_Portal_files/fullcalendar.js"></script>
+        <script type="text/javascript" src="LMS_Portal_files/jquery-ui-1.js"></script>
+        <script type="text/javascript" src="LMS_Portal_files/functions.js"></script>
+        
+        <script type="text/javascript">
+        	$(function($){
+        	    $.datepicker.setDefaults({
+        	        howOn: "button",
+                    buttonImage: "images/calendar.gif",
+                    buttonImageOnly: true,
+                    showButtonPanel: true,
+                    minDate: 0,
+                    dateFormat: 'yy-mm-dd'
+        	    });
+        	    
+	        	$('form#applyLeave input#sDate').datepicker({
+					onSelect: function(selectedDate){
+					    $('form#applyLeave input#eDate').datepicker('option', 'minDate', selectedDate);
+					}
+				});
+				
+				$('form#applyLeave input#eDate').datepicker();
+			});
+        </script>
+            
+    </head>
+
+    <body>
+        <div id="main">
+            <header>
+                <div id="title">
+                <h1>Leave Management System Portal</h1>
+                </div>
+                <div id="log">
+                <input id="logout" value="Log Out" type="submit">
+                </div>
+            </header>
+            <ol id="toc">
+    <li><a class=" active" href="#page-1"><span>Home</span></a></li>
+    <li><a class=" inactive" href="#page-2"><span>Leave Request</span></a></li>
+    <li><a class=" inactive" href="#page-3"><span>Leave History</span></a></li>
+    <li><a class=" inactive" href="#page-4"><span>Leave Balance</span></a></li>
+    <li><a class=" inactive" href="#page-5"><span>Leave Cancellation</span></a></li>
+    <li><a class=" inactive" href="#page-6"><span>Actions</span></a></li>
+    <li><a class=" inactive" href="#page-7"><span>View Calendar</span></a></li>
+</ol>
+<div class="content active" id="page-1">
+    <h2>Leave Management System.</h2><p>LMS enables employees to apply or cancel leaves, display full leaves reports or a summarised version</p><p>In
+ addition, it enables promoters to either approve or decline their 
+employees requests and to view their teams monthly leaves schedule.</p><h3>Things To Know.</h3><ol><li>When applying for leave:<ul><li>The Full/Half Day, Start time and End time fields are applicable when the request is for 1 (one) day only.</li><li>The Start time and End time fields are auto-populated based on the selection in the Full/Half Day field.</li><li>When the request is for more than 1 (one) day, the Start time and End time fields get auto-populated with 00:00:00.</li><li>Click
+ the submit button once and wait. The speed of the response from the 
+server depends on the network connection quality. The better the 
+connection, the faster the response from the server and the worst the 
+connection, the slower the response from the server</li></ul></li><li>The
+ data displayed under Leave Request and Leave Balance pages are 
+updated/changed only after the request submitted has been approved.</li></ol><h3>Promoters</h3><ul><li>Whenever your employee submit a request, you will receive an email containing a link to either approve or decline the request.</li><li>You will not be able to edit the request without accessing it via the link.</li><li>The View Calendar page enables you to view your teams daily, weekly and monthly leave schedules.</li><li>Whenever a request is not attended to within 3 days of its initiation, the request will be escalated to your promoter.</li></ul></div>
+<div class="content inactive" id="page-2">
+    <form id="applyLeave" action="#" method="post" name="applyLeave"><table id="one-column-emphasis"><colgroup><col class="oce-first"></colgroup><tbody><tr><th><label id="Label3">Leave Type</label></th><td><select id="type" name="type"><option selected="selected" value="">Select One</option><option value="1">Sick</option><option value="2">Annual</option><option value="3">Family Resp</option></select><label id="errorType" class="formError"></label></td><td class="lDaysD"><label>Availble Days as per leave type:</label></td></tr><tr><th><label id="Label4">Start Date</label></th><td><input class="hasDatepicker" id="sDate" name="sDate" type="text"><label id="errorSDate" class="formError"></label></td><td rowspan="7" class="lDaysDipl"><input id="lDays" class="lDaysDipl" readonly="readonly" type="text"></td></tr><tr><th><label id="Label5">End Date</label></th><td><input class="hasDatepicker" id="eDate" name="eDate" type="text"><label id="errorEDate" class="formError"></label><input id="numDays" value="" type="hidden"></td></tr><tr><th><label>Full/Half Day</label></th><td><select id="fhDay" name="fhDay"></select><input id="hours" value="" type="hidden"><label id="errorFHDay" class="formError"></label></td></tr><tr><th><label id="Label5">Start Time</label></th><td><input id="sTime" name="sTime" readonly="readonly" type="text"></td></tr><tr><th><label id="Label5">End Time</label></th><td><input id="eTime" name="eTime" readonly="readonly" type="text"></td></tr><tr><th><label id="Label6">Medical Certificate?</label></th><td><select id="medCert" name="medCert"></select><label id="errorMedCert" class="formError"></label></td></tr><tr><th><label id="Label7">Comments</label></th><td><textarea id="comments" cols="22" name="TextArea1" rows="2"></textarea></td></tr><tr><td></td><td colspan="2"><input id="submit" name="Submit1" value="submit" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset"><label id="reply"></label></td></tr></tbody></table></form></div>
+<div class="content inactive" id="page-3">
+    <form id="formType" action="#" method="post">
+	<select id="type">
+		<option selected="selected" value="">Select One</option>
+		<option value="0">All Types of Leaves</option>
+		<option value="1">Sick Leaves</option>
+		<option value="2">Annual Leaves</option>
+		<option value="3">Family Responsibility Leaves</option>
+	</select>
+	
+</form>
+<div id="histContent"></div>
+
+
+</div>
+<div class="content inactive" id="page-4">
+    <table class="newspaper-a"><thead><tr><th scope="col">#</th><th scope="col">Leave Type</th><th scope="col">Used Days</th><th scope="col">Reamining Days</th></tr></thead><tbody><tr><td>1</td><td>Sick</td><td>0.00</td><td>36.00</td></tr><tr><td>2</td><td>Annual</td><td>0.00</td><td>22.00</td></tr><tr><td>3</td><td>Family Resp</td><td>0.00</td><td>8.00</td></tr></tbody></table></div>
+<div class="content inactive" id="page-5">
+    <table class="newspaper-a"><thead><tr><th scope="col">#</th><th scope="col">Start Date</th><th scope="col">End date</th><th scope="col"># Days</th><th scope="col">Leave Type</th><th scope="col">Status</th><th scope="col"></th></tr></thead><tbody><tr><td colspan="7"><label id="reply"></label></td></tr></tbody></table></div>
+<div class="content inactive" id="page-6">
+    No Actions Required.</div>
+<div class="content inactive" id="page-7">
+    
+<div id="loading">loading...</div>
+<div class="fc fc-ltr" id="calendar"><table class="fc-header" style="width:100%"><tbody><tr><td class="fc-header-left"><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-prev fc-state-default fc-corner-left"><span class="fc-icon fc-icon-left-single-arrow"></span></span><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-next fc-state-default fc-corner-right"><span class="fc-icon fc-icon-right-single-arrow"></span></span><span class="fc-header-space"></span><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-today fc-state-default fc-corner-left fc-corner-right">today</span></td><td class="fc-header-center"><span class="fc-header-title"><h2>&nbsp;</h2></span></td><td class="fc-header-right"><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-month fc-state-default fc-corner-left fc-state-active">month</span><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-agendaWeek fc-state-default">week</span><span style="-moz-user-select: none;" unselectable="on" class="fc-button fc-button-agendaDay fc-state-default fc-corner-right">day</span></td></tr></tbody></table><div class="fc-content"><div style="-moz-user-select: none;" unselectable="on" class="fc-view fc-view-month fc-grid"></div></div></div>
+
+</div>
+<script src="LMS_Portal_files/activatables.js" type="text/javascript"></script>
+<script type="text/javascript">
+activatables('page', ['page-1', 'page-2', 'page-3', 'page-4', 'page-5', 'page-6', 'page-7']);
+</script>            <footer>
+                <p>
+                    © Matityah Trading (Pty) Ltd Web Solutions. All Right Reserved.
+                </p>
+            </footer>
+        </div>
+    
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

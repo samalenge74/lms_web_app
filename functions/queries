@@ -1,0 +1,9 @@
+select timediff(toTime, fromTime) as hours from hours where duration = 'fullDay';
+SELECT l.type, IFNULL(SUM(e.usedDays), 0) as usedDays, l.number - IFNULL(SUM(e.usedDays), 0) AS remainingDays FROM employee_leaves as e, leaves as l WHERE e.employee_emplNum = '1001' AND e.leaves_id = '1' AND e.leaves_id = l.id ORDER BY e.leaves_id; 
+SELECT l.type, IFNULL(SUM(e.usedDays), 0) as usedDays, l.number - IFNULL(SUM(e.usedDays), 0) AS remainingDays FROM employee_leaves as e, leaves as l WHERE e.employee_emplNum = '1001' AND e.leaves_id = '2' AND e.leaves_id = l.id; 
+INSERT INTO employee_leaves SELECT s.numDays, s.numDays * h.numHours as numHours, s.leaves_id, s.employee_emplNum, n.id FROM leaveappl as s, leaveapplstatus as n, hours as h WHERE s.id = n.leaveAppl_id AND n.status = 'approved' AND s.hours_id = h.id ORDER BY n.id;
+
+select s.type, l.startDate, l.endDate, l.numDays, l.comments, e.name from leaveappl as l, leaveapplstatus as t, employee as e, leaves as s where l.id = t.leaveAppl_id and l.employee_emplNum = e.emplNum and l.leaves_id = s.id and t.status = 'pending' and e.reportsTo = '1003' and l.id = 18; 
+
+
+

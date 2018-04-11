@@ -1,0 +1,43 @@
+<?php
+    include ('../includes/header.php');
+    echo "<div class=\"content-tabs\" >";
+    echo "<h2>LMS.</h2>";
+    echo "<p>LMS or Leave Management System enables employees to apply or cancel leaves, display full leaves reports or a summarised version</p>";
+    echo "<p>In addition, it enables promoters to either approve or decline employees requests and to view their teams monthly leaves schedule.</p>";
+    echo "<h3>Things To Know.</h3>";
+    echo "<ol>";
+    echo "<li>When applying for leave:";
+    echo "<ul>";
+    echo "<li>The Full/Half Day, Start Time and End Time fields are applicable when the request is for 1 (one) day only.</li>";
+    echo "<li>The Start time and End time fields are auto-populated based on the selection in the Full/Half Day field.</li>";
+    echo"<li>When the request is for more than 1 (one) day, the Start Time and End Time fields get auto-populated with 00:00:00.</li>";
+    echo"<li>Click the submit button once and wait. The speed of the response from the server depends on the network connection quality. The better the connection, the faster the response from the server and the worst the connection, the slower the response from the server</li>";
+    echo "</ul>";
+    echo "</li>";
+    echo "<li>The Leave Balance is updated/changed only after the request submitted has been approved.</li>";
+    echo "</li>";
+    echo "<li>And also upon successfull cancellation, the Leave Balance is updated/changed.</li>";
+    echo "<li>To cancel leave, click anywhere on the leave's row under the Cancel Leave Page.</li>";
+    echo "</ol>"; 
+    echo "<h3>Promoters</h3>";
+    echo "<ul>";
+    echo "<li>Whenever your employee submits a request, you will receive an email informing you of the request.</li>";
+    echo "<li>You will have to login into the LMS portal and view all requests under the action page.</li>";
+    echo "<li>The View Calendar page enables you to view your teams leave schedule on a daily, weekly or monthly basis.</li>";
+    echo "<li>Whenever a request is not attended to within 3 days of its initiation, the request will be escalated to your promoter.</li>";
+    echo "</ul>";
+    echo "<h3>Icons</h3>";
+    echo "<ol>";
+    echo "<li><span><img src=\"../images/request.png\" height=\"30px\" width=\"30px\" alt=\"help\" title=\"\"></span>  Request Leave Page</li>";
+    echo "<li><span><img src=\"../images/history.png\" height=\"30px\" width=\"30px\" alt=\"help\" title=\"\"></span>  View Leave History Page</li>";
+    echo "<li><span><img src=\"../images/balance.png\" height=\"30px\" width=\"30px\" alt=\"help\" title=\"\"></span>  View Leave Balance Page</li>";
+    echo "<li><span><img src=\"../images/delete.png\" height=\"30px\" width=\"30px\" alt=\"help\" title=\"\"></span>  Cancel Leave Page</li>";
+    echo "<li><span><img src=\"../images/action.png\" height=\"30px\" width=\"30px\" alt=\"help\" title=\"\"></span>  Attend to Requests Page</li>";
+    echo "<li><span><img src=\"../images/Calendar.png\" height=\"30px\" width=\"30px\" alt=\"help\" title=\"\"></span>  View Calendar Page</li>";
+    echo "<li><span><img src=\"../images/settings.png\" height=\"30px\" width=\"30px\" alt=\"help\" title=\"\"></span>  Profile Page</li>";
+    echo "<li><span><img src=\"../images/helping.png\" height=\"30px\" width=\"30px\" alt=\"help\" title=\"\"></span>  Info Page</li>";
+    echo "</ol>";
+    echo "</div>";
+	
+	include ('../includes/footer.php');
+?>

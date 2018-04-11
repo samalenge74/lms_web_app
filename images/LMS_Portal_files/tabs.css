@@ -1,0 +1,145 @@
+body{
+	background-color:#FFFFFF;
+}
+div#main{
+	margin: 0px auto;
+	width: 700px;
+	font-size: 11px;
+}
+
+div#main header {
+	border: #48f solid 3px;
+    clear: left;
+    padding: 1em;
+    width: 650px;
+    height: 50px;
+    background-color:#F0FFFF;
+} 
+
+
+div.content {
+    border: #48f solid 3px;
+    clear: left;
+    padding: 1em;
+    width: 650px;
+    background-color:#F0FFFF;
+    
+}
+
+div.content.inactive {
+	display: none;
+}
+
+ol#toc {
+    height: 2em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+ol#toc a {
+    background: #bdf url(images/tabs.gif);
+    color: #008;
+    display: block;
+    float: left;
+    height: 2em;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+ol#toc a:hover {
+    background-color: #3af;
+    background-position: 0 -120px;
+}
+
+ol#toc a:hover span {
+    background-position: 100% -120px;
+}
+
+ol#toc li {
+    float: left;
+    margin: 0 1px 0 0;
+}
+
+ol#toc li a.active {
+    background-color: #48f;
+    background-position: 0 -60px;
+    color: #fff;
+    font-weight: bold;
+}
+
+ol#toc li a.active span {
+    background-position: 100% -60px;
+}
+
+ol#toc span {
+    background: 100% 0;
+    display: block;
+    line-height: 2em;
+    padding-right: 10px;
+}
+
+footer p {
+	width: 700px;
+	margin: 0px auto;
+	padding: 5px 0px;
+}
+
+#title {
+	float: left;
+	height: 50px;
+	width: 85%;
+	
+}
+#log{
+	float: right;
+	height: auto;
+	width: 15%;
+	
+}
+
+#logout{
+	color: #FFFFFF;
+	width: 80px;
+	height: 60px;
+	border: none;
+	margin: 0;
+	padding: 0px;
+	background-color:#0081E2;
+	cursor: pointer;
+}
+
+input[type="text"]{
+	width: 195px;
+}
+
+input[type="select"]{
+	width: 200px;
+}
+
+.lDaysDipl{
+	width: 200px;
+	border:#e8edff solid thin;
+	height: 350px;
+	font-size: 48px;
+	text-align: center;
+}
+
+.lDaysD{
+	width: 200px;
+	border:#e8edff solid thin;
+	font-size: 11px;
+}
+
+#loading {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        }
+
+#calendar {
+    width: 550px;
+    margin: 0 auto;
+    }
+
